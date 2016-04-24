@@ -18,14 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    SLCircleMenu *menuButton = [[SLCircleMenu alloc] initWithFrame:CGRectMake(200, 200, 50, 50) imageName:@"icon_menu" selectedImageName:@"icon_close" buttonCount:5 duration:2 distance:120];
+    SLCircleMenu *menuButton = [[SLCircleMenu alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width / 2 - 50 / 2, [UIScreen mainScreen].bounds.size.height / 2 - 50 / 2, 50, 50) imageName:@"icon_menu" selectedImageName:@"icon_close" buttonCount:5 duration:2 distance:120];
     menuButton.backgroundColor = [UIColor lightGrayColor];
     menuButton.delegate = self;
     menuButton.layer.cornerRadius = menuButton.frame.size.width / 2.0;
     [self.view addSubview:menuButton];
-    
 }
 
+
+#pragma  mark - SLCircleMenuDelegate
 
 - (void)circleMenu:(SLCircleMenu *)circleMenu willDisplayButton:(SLCircleMenuButton *)button atIndex:(NSInteger)index {
     
